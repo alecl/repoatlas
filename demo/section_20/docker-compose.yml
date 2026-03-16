@@ -1,0 +1,41 @@
+services:
+  cards:
+    build:
+      context: .
+      target: cards
+    ports:
+      - "9000:9000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9000/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  loans:
+    build:
+      context: .
+      target: loans
+    ports:
+      - "8090:8090"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8090/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  accounts:
+    build:
+      context: .
+      target: accounts
+    ports:
+      - "8080:8080"
+    environment:
+      - CARDS_URL=http://cards:9000
+      - LOANS_URL=http://loans:8090
+    depends_on:
+      cards:
+        condition: service_healthy
+      loans:
+        condition: service_healthy

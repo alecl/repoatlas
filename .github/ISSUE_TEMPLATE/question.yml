@@ -1,0 +1,26 @@
+name: Question
+description: Ask a question about RepoAtlas
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Note:** This template is for questions only. If you want to propose a change
+        (bug fix, new feature, etc.), please use the Bug Report or Feature Request template
+        instead.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What are you trying to accomplish? This helps us give a more useful answer.
+    validations:
+      required: false

@@ -1,0 +1,340 @@
+=== Java Classes ===
+Total classes: 67
+  controller: 7
+  service: 10
+  repository: 4
+  dto: 14
+  entity: 7
+  mapper: 4
+  api_client: 2
+  exception: 6
+  other: 13
+
+=== Controllers ===
+Controller: LoansController
+  Package: com.eazybytes.loans.controller
+  File Path: main/java/com/eazybytes/loans/controller/LoansController.java
+  Base path: LoansConstants.LOANS_BASE
+  Endpoints:
+    POST: LoansConstants.LOANS_BASE/create -> createLoan
+    GET: LoansConstants.LOANS_BASE/fetch -> fetchLoanDetails
+    GET: LoansConstants.LOANS_BASE/build-info -> getBuildInfo
+    GET: LoansConstants.LOANS_BASE/java-version -> getJavaVersion
+    GET: LoansConstants.LOANS_BASE/contact-info -> getContactInfo
+    PUT: LoansConstants.LOANS_BASE/update -> updateLoanDetails
+    DELETE: LoansConstants.LOANS_BASE/delete -> deleteLoanDetails
+  Service Dependencies:
+    ILoansService iLoansService
+  Method createLoan calls:
+    (ILoansService -> LoansServiceImpl)iLoansService.createLoan()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method fetchLoanDetails calls:
+    (Logger)logger.debug()
+    (ILoansService -> LoansServiceImpl)iLoansService.fetchLoan()
+    (Logger)logger.debug()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method updateLoanDetails calls:
+    (ILoansService -> LoansServiceImpl)iLoansService.updateLoan()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method deleteLoanDetails calls:
+    (ILoansService -> LoansServiceImpl)iLoansService.deleteLoan()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getBuildInfo calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getJavaVersion calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Environment)environment.getProperty()
+  Method getContactInfo calls:
+    (Logger)logger.debug()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+
+Controller: GlobalExceptionHandler
+  Package: com.eazybytes.loans.exception
+  File Path: main/java/com/eazybytes/loans/exception/GlobalExceptionHandler.java
+  Base path: 
+  Method handleMethodArgumentNotValid calls:
+    (Unknown)ex.getAllErrors()
+    (Unknown)ex.getBindingResult()
+    (Unknown)validationErrorList.forEach()
+    (Unknown)error.getDefaultMessage()
+    (Unknown)validationErrors.put()
+  Method handleGlobalException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+  Method handleResourceNotFoundException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+  Method handleLoanAlreadyExistsException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+
+Controller: CardsController
+  Package: com.eazybytes.cards.controller
+  File Path: main/java/com/eazybytes/cards/controller/CardsController.java
+  Base path: CardsConstants.CARDS_BASE
+  Endpoints:
+    POST: CardsConstants.CARDS_BASE/create -> createCard
+    GET: CardsConstants.CARDS_BASE/fetch -> fetchCardDetails
+    GET: CardsConstants.CARDS_BASE/build-info -> getBuildInfo
+    GET: CardsConstants.CARDS_BASE/java-version -> getJavaVersion
+    GET: CardsConstants.CARDS_BASE/contact-info -> getContactInfo
+    PUT: CardsConstants.CARDS_BASE/update -> updateCardDetails
+    DELETE: CardsConstants.CARDS_BASE/delete -> deleteCardDetails
+  Service Dependencies:
+    ICardsService iCardsService
+  Method createCard calls:
+    (ICardsService -> CardsServiceImpl)iCardsService.createCard()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method fetchCardDetails calls:
+    (Logger)logger.debug()
+    (ICardsService -> CardsServiceImpl)iCardsService.fetchCard()
+    (Logger)logger.debug()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method updateCardDetails calls:
+    (ICardsService -> CardsServiceImpl)iCardsService.updateCard()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method deleteCardDetails calls:
+    (ICardsService -> CardsServiceImpl)iCardsService.deleteCard()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getBuildInfo calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getJavaVersion calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Environment)environment.getProperty()
+  Method getContactInfo calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+
+Controller: GlobalExceptionHandler
+  Package: com.eazybytes.cards.exception
+  File Path: main/java/com/eazybytes/cards/exception/GlobalExceptionHandler.java
+  Base path: 
+  Method handleMethodArgumentNotValid calls:
+    (Unknown)ex.getAllErrors()
+    (Unknown)ex.getBindingResult()
+    (Unknown)validationErrorList.forEach()
+    (Unknown)error.getDefaultMessage()
+    (Unknown)validationErrors.put()
+  Method handleGlobalException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method handleResourceNotFoundException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+  Method handleCardAlreadyExistsException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+
+Controller: CustomerController
+  Package: com.eazybytes.accounts.controller
+  File Path: main/java/com/eazybytes/accounts/controller/CustomerController.java
+  Base path: AccountsConstants.ACCOUNTS_BASE
+  Endpoints:
+    GET: AccountsConstants.ACCOUNTS_BASE/fetchCustomerDetails -> fetchCustomerDetails
+  Service Dependencies:
+    ICustomersService iCustomersService
+  Method fetchCustomerDetails calls:
+    (Logger)logger.debug()
+    (ICustomersService -> CustomersServiceImpl)iCustomersService.fetchCustomerDetails()
+    (Logger)logger.debug()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+
+Controller: AccountsController
+  Package: com.eazybytes.accounts.controller
+  File Path: main/java/com/eazybytes/accounts/controller/AccountsController.java
+  Base path: AccountsConstants.ACCOUNTS_BASE
+  Endpoints:
+    POST: AccountsConstants.ACCOUNTS_BASE/create -> createAccount
+    GET: AccountsConstants.ACCOUNTS_BASE/fetch -> fetchAccountDetails
+    GET: AccountsConstants.ACCOUNTS_BASE/build-info -> getBuildInfo
+    GET: AccountsConstants.ACCOUNTS_BASE/java-version -> getJavaVersion
+    GET: AccountsConstants.ACCOUNTS_BASE/contact-info -> getContactInfo
+    PUT: AccountsConstants.ACCOUNTS_BASE/update -> updateAccountDetails
+    DELETE: AccountsConstants.ACCOUNTS_BASE/delete -> deleteAccountDetails
+  Service Dependencies:
+    IAccountsService iAccountsService (qualifier: audit)
+  Method createAccount calls:
+    (IAccountsService -> AccountsServiceAuditImpl)iAccountsService.createAccount()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method fetchAccountDetails calls:
+    (IAccountsService -> AccountsServiceAuditImpl)iAccountsService.fetchAccount()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method updateAccountDetails calls:
+    (IAccountsService -> AccountsServiceAuditImpl)iAccountsService.updateAccount()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method deleteAccountDetails calls:
+    (IAccountsService -> AccountsServiceAuditImpl)iAccountsService.deleteAccount()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getBuildInfo calls:
+    (Logger)logger.debug()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getBuildInfoFallback calls:
+    (Logger)logger.debug()
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getJavaVersion calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+    (Environment)environment.getProperty()
+  Method getJavaVersionFallback calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+  Method getContactInfo calls:
+    (Unknown)ResponseEntity.body()
+    (Unknown)ResponseEntity.status()
+
+Controller: GlobalExceptionHandler
+  Package: com.eazybytes.accounts.exception
+  File Path: main/java/com/eazybytes/accounts/exception/GlobalExceptionHandler.java
+  Base path: 
+  Method handleMethodArgumentNotValid calls:
+    (Unknown)ex.getAllErrors()
+    (Unknown)ex.getBindingResult()
+    (Unknown)validationErrorList.forEach()
+    (Unknown)error.getDefaultMessage()
+    (Unknown)validationErrors.put()
+  Method handleGlobalException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+  Method handleResourceNotFoundException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+  Method handleCustomerAlreadyExistsException calls:
+    (Unknown)webRequest.getDescription()
+    (Unknown)exception.getMessage()
+    (Unknown)LocalDateTime.now()
+
+=== Services ===
+Service: ILoansService
+  Package: com.eazybytes.loans.service
+  File Path: main/java/com/eazybytes/loans/service/ILoansService.java
+  Methods:
+    createLoan(mobileNumber)
+    fetchLoan(mobileNumber)
+    updateLoan(loansDto)
+    deleteLoan(mobileNumber)
+
+Service: LoansServiceImpl
+  Package: com.eazybytes.loans.service.impl
+  File Path: main/java/com/eazybytes/loans/service/impl/LoansServiceImpl.java
+  Methods:
+    createLoan(mobileNumber)
+    createNewLoan(mobileNumber)
+    fetchLoan(mobileNumber)
+    updateLoan(loansDto)
+    deleteLoan(mobileNumber)
+
+Service: ICardsService
+  Package: com.eazybytes.cards.service
+  File Path: main/java/com/eazybytes/cards/service/ICardsService.java
+  Methods:
+    createCard(mobileNumber)
+    fetchCard(mobileNumber)
+    updateCard(cardsDto)
+    deleteCard(mobileNumber)
+
+Service: CardsServiceImpl
+  Package: com.eazybytes.cards.service.impl
+  File Path: main/java/com/eazybytes/cards/service/impl/CardsServiceImpl.java
+  Methods:
+    createCard(mobileNumber)
+    createNewCard(mobileNumber)
+    fetchCard(mobileNumber)
+    updateCard(cardsDto)
+    deleteCard(mobileNumber)
+
+Service: CardsServiceCacheImpl
+  Package: com.eazybytes.cards.service.impl
+  File Path: main/java/com/eazybytes/cards/service/impl/CardsServiceCacheImpl.java
+  Methods:
+    createCard(mobileNumber)
+    createNewCard(mobileNumber)
+    fetchCard(mobileNumber)
+    updateCard(cardsDto)
+    deleteCard(mobileNumber)
+
+Service: ICustomersService
+  Package: com.eazybytes.accounts.service
+  File Path: main/java/com/eazybytes/accounts/service/ICustomersService.java
+  Methods:
+    fetchCustomerDetails(mobileNumber, correlationId)
+
+Service: IAccountsService
+  Package: com.eazybytes.accounts.service
+  File Path: main/java/com/eazybytes/accounts/service/IAccountsService.java
+  Methods:
+    createAccount(customerDto)
+    fetchAccount(mobileNumber)
+    updateAccount(customerDto)
+    deleteAccount(mobileNumber)
+    updateCommunicationStatus(accountNumber)
+
+Service: CustomersServiceImpl
+  Package: com.eazybytes.accounts.service.impl
+  File Path: main/java/com/eazybytes/accounts/service/impl/CustomersServiceImpl.java
+  Methods:
+    fetchCustomerDetails(mobileNumber, correlationId)
+
+Service: AccountsServiceAuditImpl
+  Package: com.eazybytes.accounts.service.impl
+  File Path: main/java/com/eazybytes/accounts/service/impl/AccountsServiceAuditImpl.java
+  Methods:
+    createAccount(customerDto)
+    createNewAccount(customer)
+    fetchAccount(mobileNumber)
+    updateAccount(customerDto)
+    deleteAccount(mobileNumber)
+    updateCommunicationStatus(accountNumber)
+
+Service: AccountsServiceImpl
+  Package: com.eazybytes.accounts.service.impl
+  File Path: main/java/com/eazybytes/accounts/service/impl/AccountsServiceImpl.java
+  Methods:
+    createAccount(customerDto)
+    sendCommunication(account, customer)
+    createNewAccount(customer)
+    fetchAccount(mobileNumber)
+    updateAccount(customerDto)
+    deleteAccount(mobileNumber)
+    updateCommunicationStatus(accountNumber)

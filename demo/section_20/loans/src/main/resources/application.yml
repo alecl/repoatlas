@@ -1,0 +1,41 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: loans
+  datasource:
+    url: jdbc:h2:mem:loansdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+loans:
+  message: "Welcome to EazyBank Loans"
+  contactDetails:
+    name: "EazyBank Loans Support"
+    email: "loans-support@eazybank.com"
+  onCallSupport:
+    - "555-0300"
+    - "555-0301"

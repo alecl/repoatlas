@@ -1,0 +1,66 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: accounts
+  datasource:
+    url: jdbc:h2:mem:accountsdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+      client:
+        config:
+          cards:
+            url: ${CARDS_URL:http://localhost:9000}
+          loans:
+            url: ${LOANS_URL:http://localhost:8090}
+    function:
+      definition: ""
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  retry:
+    instances:
+      fetchCustomerDetails:
+        max-attempts: 3
+        wait-duration: 500ms
+  ratelimiter:
+    instances:
+      fetchCustomerDetails:
+        limit-for-period: 10
+        limit-refresh-period: 1s
+        timeout-duration: 0
+
+accounts:
+  message: "Welcome to EazyBank Accounts"
+  contactDetails:
+    name: "EazyBank Support"
+    email: "support@eazybank.com"
+  onCallSupport:
+    - "555-0100"
+    - "555-0101"

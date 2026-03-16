@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12"
+  UV_VERSION: "0.9.26"
+  SCFW_VERSION: "2.6.0"
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Compute exclude-newer date
+        run: echo "EXCLUDE_NEWER=$(date -d '-3 days' +%Y-%m-%d)" >> "$GITHUB_ENV"
+
+      - name: SCFW supply-chain audit
+        run: |
+          uv export --frozen --exclude-newer "$EXCLUDE_NEWER" --extra test --extra dev --no-hashes -o scfw_requirements.txt
+          uv venv .scfw-venv
+          source .scfw-venv/bin/activate
+          python -m ensurepip --upgrade
+          uvx "scfw==${{ env.SCFW_VERSION }}" run --allow-on-warning pip install -r scfw_requirements.txt
+          deactivate
+          rm -rf .scfw-venv scfw_requirements.txt
+
+      - name: Install dependencies
+        run: uv sync --frozen --exclude-newer "$EXCLUDE_NEWER" --extra test --extra dev
+
+      - name: Ruff lint
+        run: uv run --frozen --exclude-newer "$EXCLUDE_NEWER" ruff check app/
+
+      - name: Ruff format check
+        run: uv run --frozen --exclude-newer "$EXCLUDE_NEWER" ruff format --check app/
+
+      - name: Pyright
+        run: uv run --frozen --exclude-newer "$EXCLUDE_NEWER" pyright app/
+
+      - name: Unit tests
+        run: uv run --frozen --exclude-newer "$EXCLUDE_NEWER" pytest app/tests/unit/ -v --tb=short
+
+      - name: Integration tests
+        run: uv run --frozen --exclude-newer "$EXCLUDE_NEWER" pytest app/tests/integration/ -v --tb=short -x

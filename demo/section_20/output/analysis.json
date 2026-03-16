@@ -1,0 +1,909 @@
+{
+  "summary": {
+    "total_classes": 67,
+    "controllers": 7,
+    "services": 10
+  },
+  "controllers": [
+    {
+      "name": "LoansController",
+      "package": "com.eazybytes.loans.controller",
+      "fully_qualified_name": "com.eazybytes.loans.controller.LoansController",
+      "base_endpoint_path": "LoansConstants.LOANS_BASE",
+      "endpoints": {
+        "POST": [
+          {
+            "path": "LoansConstants.LOANS_BASE/create",
+            "method": "createLoan"
+          }
+        ],
+        "GET": [
+          {
+            "path": "LoansConstants.LOANS_BASE/fetch",
+            "method": "fetchLoanDetails"
+          },
+          {
+            "path": "LoansConstants.LOANS_BASE/build-info",
+            "method": "getBuildInfo"
+          },
+          {
+            "path": "LoansConstants.LOANS_BASE/java-version",
+            "method": "getJavaVersion"
+          },
+          {
+            "path": "LoansConstants.LOANS_BASE/contact-info",
+            "method": "getContactInfo"
+          }
+        ],
+        "PUT": [
+          {
+            "path": "LoansConstants.LOANS_BASE/update",
+            "method": "updateLoanDetails"
+          }
+        ],
+        "DELETE": [
+          {
+            "path": "LoansConstants.LOANS_BASE/delete",
+            "method": "deleteLoanDetails"
+          }
+        ]
+      },
+      "service_dependencies": [
+        {
+          "name": "iLoansService",
+          "type": "ILoansService",
+          "is_autowired": true,
+          "qualifier": null
+        }
+      ],
+      "method_calls": {
+        "createLoan": [
+          {
+            "service_name": "iLoansService",
+            "method_name": "createLoan",
+            "service_type": "ILoansService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ],
+        "fetchLoanDetails": [
+          {
+            "service_name": "iLoansService",
+            "method_name": "fetchLoan",
+            "service_type": "ILoansService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ],
+        "updateLoanDetails": [
+          {
+            "service_name": "iLoansService",
+            "method_name": "updateLoan",
+            "service_type": "ILoansService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "loansDto"
+              }
+            ]
+          }
+        ],
+        "deleteLoanDetails": [
+          {
+            "service_name": "iLoansService",
+            "method_name": "deleteLoan",
+            "service_type": "ILoansService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "GlobalExceptionHandler",
+      "package": "com.eazybytes.loans.exception",
+      "fully_qualified_name": "com.eazybytes.loans.exception.GlobalExceptionHandler",
+      "base_endpoint_path": "",
+      "endpoints": {},
+      "service_dependencies": [],
+      "method_calls": {}
+    },
+    {
+      "name": "CardsController",
+      "package": "com.eazybytes.cards.controller",
+      "fully_qualified_name": "com.eazybytes.cards.controller.CardsController",
+      "base_endpoint_path": "CardsConstants.CARDS_BASE",
+      "endpoints": {
+        "POST": [
+          {
+            "path": "CardsConstants.CARDS_BASE/create",
+            "method": "createCard"
+          }
+        ],
+        "GET": [
+          {
+            "path": "CardsConstants.CARDS_BASE/fetch",
+            "method": "fetchCardDetails"
+          },
+          {
+            "path": "CardsConstants.CARDS_BASE/build-info",
+            "method": "getBuildInfo"
+          },
+          {
+            "path": "CardsConstants.CARDS_BASE/java-version",
+            "method": "getJavaVersion"
+          },
+          {
+            "path": "CardsConstants.CARDS_BASE/contact-info",
+            "method": "getContactInfo"
+          }
+        ],
+        "PUT": [
+          {
+            "path": "CardsConstants.CARDS_BASE/update",
+            "method": "updateCardDetails"
+          }
+        ],
+        "DELETE": [
+          {
+            "path": "CardsConstants.CARDS_BASE/delete",
+            "method": "deleteCardDetails"
+          }
+        ]
+      },
+      "service_dependencies": [
+        {
+          "name": "iCardsService",
+          "type": "ICardsService",
+          "is_autowired": true,
+          "qualifier": null
+        }
+      ],
+      "method_calls": {
+        "createCard": [
+          {
+            "service_name": "iCardsService",
+            "method_name": "createCard",
+            "service_type": "ICardsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ],
+        "fetchCardDetails": [
+          {
+            "service_name": "iCardsService",
+            "method_name": "fetchCard",
+            "service_type": "ICardsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ],
+        "updateCardDetails": [
+          {
+            "service_name": "iCardsService",
+            "method_name": "updateCard",
+            "service_type": "ICardsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "cardsDto"
+              }
+            ]
+          }
+        ],
+        "deleteCardDetails": [
+          {
+            "service_name": "iCardsService",
+            "method_name": "deleteCard",
+            "service_type": "ICardsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "GlobalExceptionHandler",
+      "package": "com.eazybytes.cards.exception",
+      "fully_qualified_name": "com.eazybytes.cards.exception.GlobalExceptionHandler",
+      "base_endpoint_path": "",
+      "endpoints": {},
+      "service_dependencies": [],
+      "method_calls": {}
+    },
+    {
+      "name": "CustomerController",
+      "package": "com.eazybytes.accounts.controller",
+      "fully_qualified_name": "com.eazybytes.accounts.controller.CustomerController",
+      "base_endpoint_path": "AccountsConstants.ACCOUNTS_BASE",
+      "endpoints": {
+        "GET": [
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/fetchCustomerDetails",
+            "method": "fetchCustomerDetails"
+          }
+        ]
+      },
+      "service_dependencies": [
+        {
+          "name": "iCustomersService",
+          "type": "ICustomersService",
+          "is_autowired": true,
+          "qualifier": null
+        }
+      ],
+      "method_calls": {
+        "fetchCustomerDetails": [
+          {
+            "service_name": "iCustomersService",
+            "method_name": "fetchCustomerDetails",
+            "service_type": "ICustomersService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              },
+              {
+                "type": "identifier",
+                "raw_expression": "correlationId"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "AccountsController",
+      "package": "com.eazybytes.accounts.controller",
+      "fully_qualified_name": "com.eazybytes.accounts.controller.AccountsController",
+      "base_endpoint_path": "AccountsConstants.ACCOUNTS_BASE",
+      "endpoints": {
+        "POST": [
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/create",
+            "method": "createAccount"
+          }
+        ],
+        "GET": [
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/fetch",
+            "method": "fetchAccountDetails"
+          },
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/build-info",
+            "method": "getBuildInfo"
+          },
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/java-version",
+            "method": "getJavaVersion"
+          },
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/contact-info",
+            "method": "getContactInfo"
+          }
+        ],
+        "PUT": [
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/update",
+            "method": "updateAccountDetails"
+          }
+        ],
+        "DELETE": [
+          {
+            "path": "AccountsConstants.ACCOUNTS_BASE/delete",
+            "method": "deleteAccountDetails"
+          }
+        ]
+      },
+      "service_dependencies": [
+        {
+          "name": "iAccountsService",
+          "type": "IAccountsService",
+          "is_autowired": true,
+          "qualifier": "audit"
+        }
+      ],
+      "method_calls": {
+        "createAccount": [
+          {
+            "service_name": "iAccountsService",
+            "method_name": "createAccount",
+            "service_type": "IAccountsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "customerDto"
+              }
+            ]
+          }
+        ],
+        "fetchAccountDetails": [
+          {
+            "service_name": "iAccountsService",
+            "method_name": "fetchAccount",
+            "service_type": "IAccountsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ],
+        "updateAccountDetails": [
+          {
+            "service_name": "iAccountsService",
+            "method_name": "updateAccount",
+            "service_type": "IAccountsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "customerDto"
+              }
+            ]
+          }
+        ],
+        "deleteAccountDetails": [
+          {
+            "service_name": "iAccountsService",
+            "method_name": "deleteAccount",
+            "service_type": "IAccountsService",
+            "arguments": [
+              {
+                "type": "identifier",
+                "raw_expression": "mobileNumber"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "GlobalExceptionHandler",
+      "package": "com.eazybytes.accounts.exception",
+      "fully_qualified_name": "com.eazybytes.accounts.exception.GlobalExceptionHandler",
+      "base_endpoint_path": "",
+      "endpoints": {},
+      "service_dependencies": [],
+      "method_calls": {}
+    }
+  ],
+  "services": [
+    {
+      "name": "ILoansService",
+      "package": "com.eazybytes.loans.service",
+      "fully_qualified_name": "com.eazybytes.loans.service.ILoansService",
+      "methods": [
+        {
+          "name": "createLoan",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "fetchLoan",
+          "return_type": "LoansDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateLoan",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "loansDto",
+              "type": "LoansDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteLoan",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LoansServiceImpl",
+      "package": "com.eazybytes.loans.service.impl",
+      "fully_qualified_name": "com.eazybytes.loans.service.impl.LoansServiceImpl",
+      "methods": [
+        {
+          "name": "createLoan",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "createNewLoan",
+          "return_type": "Loans",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "fetchLoan",
+          "return_type": "LoansDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateLoan",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "loansDto",
+              "type": "LoansDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteLoan",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ICardsService",
+      "package": "com.eazybytes.cards.service",
+      "fully_qualified_name": "com.eazybytes.cards.service.ICardsService",
+      "methods": [
+        {
+          "name": "createCard",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "fetchCard",
+          "return_type": "CardsDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateCard",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "cardsDto",
+              "type": "CardsDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteCard",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CardsServiceImpl",
+      "package": "com.eazybytes.cards.service.impl",
+      "fully_qualified_name": "com.eazybytes.cards.service.impl.CardsServiceImpl",
+      "methods": [
+        {
+          "name": "createCard",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "createNewCard",
+          "return_type": "Cards",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "fetchCard",
+          "return_type": "CardsDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateCard",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "cardsDto",
+              "type": "CardsDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteCard",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CardsServiceCacheImpl",
+      "package": "com.eazybytes.cards.service.impl",
+      "fully_qualified_name": "com.eazybytes.cards.service.impl.CardsServiceCacheImpl",
+      "methods": [
+        {
+          "name": "createCard",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "createNewCard",
+          "return_type": "Cards",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "fetchCard",
+          "return_type": "CardsDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateCard",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "cardsDto",
+              "type": "CardsDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteCard",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ICustomersService",
+      "package": "com.eazybytes.accounts.service",
+      "fully_qualified_name": "com.eazybytes.accounts.service.ICustomersService",
+      "methods": [
+        {
+          "name": "fetchCustomerDetails",
+          "return_type": "CustomerDetailsDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            },
+            {
+              "name": "correlationId",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IAccountsService",
+      "package": "com.eazybytes.accounts.service",
+      "fully_qualified_name": "com.eazybytes.accounts.service.IAccountsService",
+      "methods": [
+        {
+          "name": "createAccount",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "customerDto",
+              "type": "CustomerDto"
+            }
+          ]
+        },
+        {
+          "name": "fetchAccount",
+          "return_type": "CustomerDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateAccount",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "customerDto",
+              "type": "CustomerDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteAccount",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateCommunicationStatus",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "accountNumber",
+              "type": "Long"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CustomersServiceImpl",
+      "package": "com.eazybytes.accounts.service.impl",
+      "fully_qualified_name": "com.eazybytes.accounts.service.impl.CustomersServiceImpl",
+      "methods": [
+        {
+          "name": "fetchCustomerDetails",
+          "return_type": "CustomerDetailsDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            },
+            {
+              "name": "correlationId",
+              "type": "String"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccountsServiceAuditImpl",
+      "package": "com.eazybytes.accounts.service.impl",
+      "fully_qualified_name": "com.eazybytes.accounts.service.impl.AccountsServiceAuditImpl",
+      "methods": [
+        {
+          "name": "createAccount",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "customerDto",
+              "type": "CustomerDto"
+            }
+          ]
+        },
+        {
+          "name": "createNewAccount",
+          "return_type": "Accounts",
+          "parameters": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        },
+        {
+          "name": "fetchAccount",
+          "return_type": "CustomerDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateAccount",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "customerDto",
+              "type": "CustomerDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteAccount",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateCommunicationStatus",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "accountNumber",
+              "type": "Long"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AccountsServiceImpl",
+      "package": "com.eazybytes.accounts.service.impl",
+      "fully_qualified_name": "com.eazybytes.accounts.service.impl.AccountsServiceImpl",
+      "methods": [
+        {
+          "name": "createAccount",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "customerDto",
+              "type": "CustomerDto"
+            }
+          ]
+        },
+        {
+          "name": "sendCommunication",
+          "return_type": "void",
+          "parameters": [
+            {
+              "name": "account",
+              "type": "Accounts"
+            },
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        },
+        {
+          "name": "createNewAccount",
+          "return_type": "Accounts",
+          "parameters": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        },
+        {
+          "name": "fetchAccount",
+          "return_type": "CustomerDto",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateAccount",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "customerDto",
+              "type": "CustomerDto"
+            }
+          ]
+        },
+        {
+          "name": "deleteAccount",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "mobileNumber",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateCommunicationStatus",
+          "return_type": "boolean",
+          "parameters": [
+            {
+              "name": "accountNumber",
+              "type": "Long"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

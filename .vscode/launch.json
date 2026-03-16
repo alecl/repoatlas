@@ -1,0 +1,114 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: java_analyze",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/src/app/java_analyze.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--constants",
+                "${workspaceFolder}/app/tests/unit/codeanalyzer/test_samples/global_constants.json",
+                "--format",
+                "markdown",
+                "${workspaceFolder}/app/tests/unit/codeanalyzer/test_samples/EntityController.java"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app"
+            }
+        },
+        {
+            "name": "Python: java_analyze path",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/src/app/java_analyze.py",
+            "console": "integratedTerminal",
+            "args": [
+                "-r",
+                "--format",
+                "markdown",
+                "/Users/alec/eclipse-workspace/sm-latest/organization-service/src/main/java/com/savvas/organization"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app"
+            }
+        },
+        {
+            "name": "Python: BIG SEARCH java_analyze path",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/src/app/java_analyze.py",
+            "console": "integratedTerminal",
+            "args": [
+                "-r",
+                "--format",
+                "markdown",
+                "--search-type",
+                "endpoint",
+                "--base-path",
+                "/lms/web",
+                "--search",
+                "/api/v1/organizations/getOrganizationFlags",
+                "--",
+                "/Users/alec/eclipse-workspace/sm-latest",
+                "/Users/alec/eclipse-workspace/successmaker-lms-common-lib/sm-common"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app"
+            }
+        },
+        {
+            "name": "Python: BIG java_analyze path",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/src/app/java_analyze.py",
+            "console": "integratedTerminal",
+            "args": [
+                "-r",
+                "--format",
+                "markdown",
+                "--config",
+                "app/src/codeanalyzer/codeanalyzer_sample_config.json",
+                "--",
+                "/Users/alec/eclipse-workspace/sm-latest",
+                "/Users/alec/eclipse-workspace/successmaker-lms-common-lib/sm-common"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app"
+            }
+        },
+        {
+            "name": "Python: java_analyze microservices",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/src/app/java_analyze.py",
+            "console": "integratedTerminal",
+            "args": [
+                "-r",
+                "--format",
+                "markdown",
+                "--",
+                "/Users/alec/gitproj/microservices/section_20"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app"
+            }
+        },
+        {
+            "name": "Python: manual_test_real_file_parser",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "manual_test_real_file_parser.py",
+            "cwd": "${workspaceFolder}/app/tests/unit/codeanalyzer/test_samples/",
+            "console": "integratedTerminal",
+            "args": ["EntityController.java", "global_constants.json"],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app"
+            }
+        }
+    ]
+}

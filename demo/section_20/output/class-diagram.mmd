@@ -1,0 +1,124 @@
+```mermaid
+classDiagram
+  class LoansController {
+    <<controller>>
+    +ResponseEntity<ResponseDto> createLoan(String mobileNumber)
+    +ResponseEntity<LoansDto> fetchLoanDetails(String correlationId, String mobileNumber)
+    +ResponseEntity<ResponseDto> updateLoanDetails(LoansDto loansDto)
+    +ResponseEntity<ResponseDto> deleteLoanDetails(String mobileNumber)
+    +ResponseEntity<String> getBuildInfo()
+    +ResponseEntity<String> getJavaVersion()
+    +ResponseEntity<LoansContactInfoDto> getContactInfo()
+  }
+  class ILoansService {
+    <<service>>
+    +void createLoan(String mobileNumber)
+    +LoansDto fetchLoan(String mobileNumber)
+    +boolean updateLoan(LoansDto loansDto)
+    +boolean deleteLoan(String mobileNumber)
+  }
+  class LoansServiceImpl {
+    <<service>>
+    +void createLoan(String mobileNumber)
+    +Loans createNewLoan(String mobileNumber)
+    +LoansDto fetchLoan(String mobileNumber)
+    +boolean updateLoan(LoansDto loansDto)
+    +boolean deleteLoan(String mobileNumber)
+  }
+  class GlobalExceptionHandler {
+    <<controller>>
+  }
+  class CardsController {
+    <<controller>>
+    +ResponseEntity<ResponseDto> createCard(String mobileNumber)
+    +ResponseEntity<CardsDto> fetchCardDetails(String correlationId, String mobileNumber)
+    +ResponseEntity<ResponseDto> updateCardDetails(CardsDto cardsDto)
+    +ResponseEntity<ResponseDto> deleteCardDetails(String mobileNumber)
+    +ResponseEntity<String> getBuildInfo()
+    +ResponseEntity<String> getJavaVersion()
+    +ResponseEntity<CardsContactInfoDto> getContactInfo()
+  }
+  class ICardsService {
+    <<service>>
+    +void createCard(String mobileNumber)
+    +CardsDto fetchCard(String mobileNumber)
+    +boolean updateCard(CardsDto cardsDto)
+    +boolean deleteCard(String mobileNumber)
+  }
+  class CardsServiceImpl {
+    <<service>>
+    +void createCard(String mobileNumber)
+    +Cards createNewCard(String mobileNumber)
+    +CardsDto fetchCard(String mobileNumber)
+    +boolean updateCard(CardsDto cardsDto)
+    +boolean deleteCard(String mobileNumber)
+  }
+  class CardsServiceCacheImpl {
+    <<service>>
+    +void createCard(String mobileNumber)
+    +Cards createNewCard(String mobileNumber)
+    +CardsDto fetchCard(String mobileNumber)
+    +boolean updateCard(CardsDto cardsDto)
+    +boolean deleteCard(String mobileNumber)
+  }
+  class GlobalExceptionHandler {
+    <<controller>>
+  }
+  class CustomerController {
+    <<controller>>
+    +ResponseEntity<CustomerDetailsDto> fetchCustomerDetails(String correlationId, String mobileNumber)
+  }
+  class AccountsController {
+    <<controller>>
+    +ResponseEntity<ResponseDto> createAccount(CustomerDto customerDto)
+    +ResponseEntity<CustomerDto> fetchAccountDetails(String mobileNumber)
+    +ResponseEntity<ResponseDto> updateAccountDetails(CustomerDto customerDto)
+    +ResponseEntity<ResponseDto> deleteAccountDetails(String mobileNumber)
+    +ResponseEntity<String> getBuildInfo()
+    +ResponseEntity<String> getJavaVersion()
+    +ResponseEntity<AccountsContactInfoDto> getContactInfo()
+  }
+  class ICustomersService {
+    <<service>>
+    +CustomerDetailsDto fetchCustomerDetails(String mobileNumber, String correlationId)
+  }
+  class IAccountsService {
+    <<service>>
+    +void createAccount(CustomerDto customerDto)
+    +CustomerDto fetchAccount(String mobileNumber)
+    +boolean updateAccount(CustomerDto customerDto)
+    +boolean deleteAccount(String mobileNumber)
+    +boolean updateCommunicationStatus(Long accountNumber)
+  }
+  class CustomersServiceImpl {
+    <<service>>
+    +CustomerDetailsDto fetchCustomerDetails(String mobileNumber, String correlationId)
+  }
+  class AccountsServiceAuditImpl {
+    <<service>>
+    +void createAccount(CustomerDto customerDto)
+    +Accounts createNewAccount(Customer customer)
+    +CustomerDto fetchAccount(String mobileNumber)
+    +boolean updateAccount(CustomerDto customerDto)
+    +boolean deleteAccount(String mobileNumber)
+    +boolean updateCommunicationStatus(Long accountNumber)
+  }
+  class AccountsServiceImpl {
+    <<service>>
+    +void createAccount(CustomerDto customerDto)
+    +void sendCommunication(Accounts account, Customer customer)
+    +Accounts createNewAccount(Customer customer)
+    +CustomerDto fetchAccount(String mobileNumber)
+    +boolean updateAccount(CustomerDto customerDto)
+    +boolean deleteAccount(String mobileNumber)
+    +boolean updateCommunicationStatus(Long accountNumber)
+  }
+  class GlobalExceptionHandler {
+    <<controller>>
+  }
+  LoansController --> ILoansService : uses
+  CardsController --> ICardsService : uses
+  CustomerController --> ICustomersService : uses
+  AccountsController --> AccountsServiceAuditImpl : uses
+  AccountsServiceAuditImpl <|-- IAccountsService : subclass
+```

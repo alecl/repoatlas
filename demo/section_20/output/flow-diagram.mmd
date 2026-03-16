@@ -1,0 +1,214 @@
+```mermaid
+flowchart TD
+  LoansController["Controller: LoansController"]
+  LoansController_createLoan("POST: createLoan")
+  LoansController --> LoansController_createLoan
+  ILoansService_createLoan["Service: ILoansService.createLoan"]
+  LoansController_createLoan --> ILoansService_createLoan
+  Unknown_body["Service: Unknown.body"]
+  LoansController_createLoan --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_createLoan --> Unknown_status
+  LoansController_fetchLoanDetails("GET: fetchLoanDetails")
+  LoansController --> LoansController_fetchLoanDetails
+  Logger_debug["Service: Logger.debug"]
+  LoansController_fetchLoanDetails --> Logger_debug
+  ILoansService_fetchLoan["Service: ILoansService.fetchLoan"]
+  LoansController_fetchLoanDetails --> ILoansService_fetchLoan
+  Logger_debug["Service: Logger.debug"]
+  LoansController_fetchLoanDetails --> Logger_debug
+  Unknown_body["Service: Unknown.body"]
+  LoansController_fetchLoanDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_fetchLoanDetails --> Unknown_status
+  LoansController_updateLoanDetails("PUT: updateLoanDetails")
+  LoansController --> LoansController_updateLoanDetails
+  ILoansService_updateLoan["Service: ILoansService.updateLoan"]
+  LoansController_updateLoanDetails --> ILoansService_updateLoan
+  Unknown_body["Service: Unknown.body"]
+  LoansController_updateLoanDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_updateLoanDetails --> Unknown_status
+  Unknown_body["Service: Unknown.body"]
+  LoansController_updateLoanDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_updateLoanDetails --> Unknown_status
+  LoansController_deleteLoanDetails("DELETE: deleteLoanDetails")
+  LoansController --> LoansController_deleteLoanDetails
+  ILoansService_deleteLoan["Service: ILoansService.deleteLoan"]
+  LoansController_deleteLoanDetails --> ILoansService_deleteLoan
+  Unknown_body["Service: Unknown.body"]
+  LoansController_deleteLoanDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_deleteLoanDetails --> Unknown_status
+  Unknown_body["Service: Unknown.body"]
+  LoansController_deleteLoanDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_deleteLoanDetails --> Unknown_status
+  LoansController_getBuildInfo("GET: getBuildInfo")
+  LoansController --> LoansController_getBuildInfo
+  Unknown_body["Service: Unknown.body"]
+  LoansController_getBuildInfo --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_getBuildInfo --> Unknown_status
+  LoansController_getJavaVersion("GET: getJavaVersion")
+  LoansController --> LoansController_getJavaVersion
+  Unknown_body["Service: Unknown.body"]
+  LoansController_getJavaVersion --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_getJavaVersion --> Unknown_status
+  Environment_getProperty["Service: Environment.getProperty"]
+  LoansController_getJavaVersion --> Environment_getProperty
+  LoansController_getContactInfo("GET: getContactInfo")
+  LoansController --> LoansController_getContactInfo
+  Logger_debug["Service: Logger.debug"]
+  LoansController_getContactInfo --> Logger_debug
+  Unknown_body["Service: Unknown.body"]
+  LoansController_getContactInfo --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  LoansController_getContactInfo --> Unknown_status
+  GlobalExceptionHandler["Controller: GlobalExceptionHandler"]
+  CardsController["Controller: CardsController"]
+  CardsController_createCard("POST: createCard")
+  CardsController --> CardsController_createCard
+  ICardsService_createCard["Service: ICardsService.createCard"]
+  CardsController_createCard --> ICardsService_createCard
+  Unknown_body["Service: Unknown.body"]
+  CardsController_createCard --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_createCard --> Unknown_status
+  CardsController_fetchCardDetails("GET: fetchCardDetails")
+  CardsController --> CardsController_fetchCardDetails
+  Logger_debug["Service: Logger.debug"]
+  CardsController_fetchCardDetails --> Logger_debug
+  ICardsService_fetchCard["Service: ICardsService.fetchCard"]
+  CardsController_fetchCardDetails --> ICardsService_fetchCard
+  Logger_debug["Service: Logger.debug"]
+  CardsController_fetchCardDetails --> Logger_debug
+  Unknown_body["Service: Unknown.body"]
+  CardsController_fetchCardDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_fetchCardDetails --> Unknown_status
+  CardsController_updateCardDetails("PUT: updateCardDetails")
+  CardsController --> CardsController_updateCardDetails
+  ICardsService_updateCard["Service: ICardsService.updateCard"]
+  CardsController_updateCardDetails --> ICardsService_updateCard
+  Unknown_body["Service: Unknown.body"]
+  CardsController_updateCardDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_updateCardDetails --> Unknown_status
+  Unknown_body["Service: Unknown.body"]
+  CardsController_updateCardDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_updateCardDetails --> Unknown_status
+  CardsController_deleteCardDetails("DELETE: deleteCardDetails")
+  CardsController --> CardsController_deleteCardDetails
+  ICardsService_deleteCard["Service: ICardsService.deleteCard"]
+  CardsController_deleteCardDetails --> ICardsService_deleteCard
+  Unknown_body["Service: Unknown.body"]
+  CardsController_deleteCardDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_deleteCardDetails --> Unknown_status
+  Unknown_body["Service: Unknown.body"]
+  CardsController_deleteCardDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_deleteCardDetails --> Unknown_status
+  CardsController_getBuildInfo("GET: getBuildInfo")
+  CardsController --> CardsController_getBuildInfo
+  Unknown_body["Service: Unknown.body"]
+  CardsController_getBuildInfo --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_getBuildInfo --> Unknown_status
+  CardsController_getJavaVersion("GET: getJavaVersion")
+  CardsController --> CardsController_getJavaVersion
+  Unknown_body["Service: Unknown.body"]
+  CardsController_getJavaVersion --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_getJavaVersion --> Unknown_status
+  Environment_getProperty["Service: Environment.getProperty"]
+  CardsController_getJavaVersion --> Environment_getProperty
+  CardsController_getContactInfo("GET: getContactInfo")
+  CardsController --> CardsController_getContactInfo
+  Unknown_body["Service: Unknown.body"]
+  CardsController_getContactInfo --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CardsController_getContactInfo --> Unknown_status
+  GlobalExceptionHandler["Controller: GlobalExceptionHandler"]
+  CustomerController["Controller: CustomerController"]
+  CustomerController_fetchCustomerDetails("GET: fetchCustomerDetails")
+  CustomerController --> CustomerController_fetchCustomerDetails
+  Logger_debug["Service: Logger.debug"]
+  CustomerController_fetchCustomerDetails --> Logger_debug
+  ICustomersService_fetchCustomerDetails["Service: ICustomersService.fetchCustomerDetails"]
+  CustomerController_fetchCustomerDetails --> ICustomersService_fetchCustomerDetails
+  Logger_debug["Service: Logger.debug"]
+  CustomerController_fetchCustomerDetails --> Logger_debug
+  Unknown_body["Service: Unknown.body"]
+  CustomerController_fetchCustomerDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  CustomerController_fetchCustomerDetails --> Unknown_status
+  AccountsController["Controller: AccountsController"]
+  AccountsController_createAccount("POST: createAccount")
+  AccountsController --> AccountsController_createAccount
+  AccountsServiceAuditImpl_createAccount["Service: AccountsServiceAuditImpl<br/>subclass of: IAccountsService.createAccount"]
+  AccountsController_createAccount --> AccountsServiceAuditImpl_createAccount
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_createAccount --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_createAccount --> Unknown_status
+  AccountsController_fetchAccountDetails("GET: fetchAccountDetails")
+  AccountsController --> AccountsController_fetchAccountDetails
+  AccountsServiceAuditImpl_fetchAccount["Service: AccountsServiceAuditImpl<br/>subclass of: IAccountsService.fetchAccount"]
+  AccountsController_fetchAccountDetails --> AccountsServiceAuditImpl_fetchAccount
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_fetchAccountDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_fetchAccountDetails --> Unknown_status
+  AccountsController_updateAccountDetails("PUT: updateAccountDetails")
+  AccountsController --> AccountsController_updateAccountDetails
+  AccountsServiceAuditImpl_updateAccount["Service: AccountsServiceAuditImpl<br/>subclass of: IAccountsService.updateAccount"]
+  AccountsController_updateAccountDetails --> AccountsServiceAuditImpl_updateAccount
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_updateAccountDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_updateAccountDetails --> Unknown_status
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_updateAccountDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_updateAccountDetails --> Unknown_status
+  AccountsController_deleteAccountDetails("DELETE: deleteAccountDetails")
+  AccountsController --> AccountsController_deleteAccountDetails
+  AccountsServiceAuditImpl_deleteAccount["Service: AccountsServiceAuditImpl<br/>subclass of: IAccountsService.deleteAccount"]
+  AccountsController_deleteAccountDetails --> AccountsServiceAuditImpl_deleteAccount
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_deleteAccountDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_deleteAccountDetails --> Unknown_status
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_deleteAccountDetails --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_deleteAccountDetails --> Unknown_status
+  AccountsController_getBuildInfo("GET: getBuildInfo")
+  AccountsController --> AccountsController_getBuildInfo
+  Logger_debug["Service: Logger.debug"]
+  AccountsController_getBuildInfo --> Logger_debug
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_getBuildInfo --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_getBuildInfo --> Unknown_status
+  AccountsController_getJavaVersion("GET: getJavaVersion")
+  AccountsController --> AccountsController_getJavaVersion
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_getJavaVersion --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_getJavaVersion --> Unknown_status
+  Environment_getProperty["Service: Environment.getProperty"]
+  AccountsController_getJavaVersion --> Environment_getProperty
+  AccountsController_getContactInfo("GET: getContactInfo")
+  AccountsController --> AccountsController_getContactInfo
+  Unknown_body["Service: Unknown.body"]
+  AccountsController_getContactInfo --> Unknown_body
+  Unknown_status["Service: Unknown.status"]
+  AccountsController_getContactInfo --> Unknown_status
+  GlobalExceptionHandler["Controller: GlobalExceptionHandler"]
+```

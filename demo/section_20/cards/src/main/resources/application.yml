@@ -1,0 +1,41 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: cards
+  datasource:
+    url: jdbc:h2:mem:cardsdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+cards:
+  message: "Welcome to EazyBank Cards"
+  contactDetails:
+    name: "EazyBank Cards Support"
+    email: "cards-support@eazybank.com"
+  onCallSupport:
+    - "555-0200"
+    - "555-0201"

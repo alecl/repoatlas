@@ -1,0 +1,7 @@
+{
+    "AppConstants.AUTHORIZATION": "Authorization",
+    "AppConstants.CALLER_IDENTITY": "X-Caller-Ref",
+    "AppConstants.ENTITY_ID": "entity-id",
+    "EntityConstants.GET_ENTITY_FLAGS_URL": "/flags",
+    "EntityConstants.SET_ENTITY_FLAGS_URL": "/set-flags"
+}

@@ -1,0 +1,41 @@
+// RepoAtlas configuration file (JSON5 format — comments are supported).
+// Copy this file, uncomment the sections you need, and pass via --config.
+//
+// All sections are optional. Omitted sections use built-in defaults.
+// The authoritative schema is defined in code_analyzer_config.py (CodeAnalyzerConfig).
+{
+    "logging": {
+        // Valid levels: DEBUG, INFO, WARNING, ERROR, CRITICAL, TRACE
+        // Validated by LoggingConfig.validate_log_level
+        "level": "DEBUG"
+    },
+    "classification": {
+        // Override automatic class categorization by simple class name.
+        // Valid categories (validated against ClassCategory enum):
+        //   controller, service, enum, repository, dto, dao, entity,
+        //   configuration, mapper, aspect, component, utility, client,
+        //   api_client, exception, test, other, unknown
+        "class_name_overrides": {
+            // "MySpecialClient": "api_client",
+            // "HelperUtils": "utility"
+        },
+        // Customize API client detection.
+        // Values are MERGED with built-in defaults (via ApiClientConfig._merge_defaults)
+        // — you only need to list your additions, not the full set.
+        "api_client": {
+            // Annotation names that indicate a class is an API client.
+            // Built-in defaults include: FeignClient, RestClient, GraphQLApi,
+            //   WebServiceClient, ApiClient
+            "annotations": [
+                // "MyCustomClientAnnotation"
+            ],
+            // FQNs of types whose presence as members, constructor parameters,
+            // or method parameters indicates an API client.
+            // Built-in defaults include: RestTemplate, OkHttpClient, HttpClient,
+            //   ManagedChannel, ApolloClient, and others.
+            "indicator_types": [
+                // "com.example.CustomHttpClient"
+            ]
+        }
+    }
+}
