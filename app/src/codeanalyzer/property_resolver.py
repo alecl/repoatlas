@@ -1,6 +1,4 @@
-from typing import Dict, Optional
-
-from .models import Annotation, MemberVariable
+from .models import MemberVariable
 
 
 class PropertyReference:
@@ -49,8 +47,8 @@ class PropertyResolver:
                             try:
                                 member.resolved_properties = {}
                             except Exception:
-                                # Fallback for pydantic models: use __dict__ directly
-                                member.__dict__["resolved_properties"] = {}
+                                # Fallback for pydantic models
+                                object.__setattr__(member, "resolved_properties", {})
                         member.resolved_properties[property_ref.name] = resolved_value
                         return True
         return False

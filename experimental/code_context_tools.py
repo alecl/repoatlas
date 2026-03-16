@@ -6,9 +6,8 @@ by leveraging the codetools package functionality.
 """
 
 import os
-import pathlib
 import re
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Any
 
 from app.src.codetools.codetools import FileContentsSearchConfig, generate_file_trees
 from app.src.codetools.merge import merge_code_from_files
@@ -58,7 +57,7 @@ def generate_code_context(
     preview_mode: bool = True,
     max_preview_folders: int = 10,
     max_files_per_folder: int = 3,
-) -> dict[str, list[str] | dict]:
+) -> dict[str, Any]:
     """
     Generate code context information for a given directory with optional filtering.
 

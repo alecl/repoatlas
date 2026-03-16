@@ -8,11 +8,9 @@ functionality without using the MCP server.
 
 import argparse
 import importlib.util
-import json
 import os
 import sys
 import traceback
-from typing import Dict, List, Optional
 
 # Print debugging information about the Python environment
 print("=" * 50)
@@ -36,12 +34,12 @@ print("\nChecking for specific modules:")
 try:
     import app
 
-    print(f"app module found at: {app.__file__}")
+    print(f"app module found at: {getattr(app, '__file__', 'unknown')}")
 except ImportError as e:
     print(f"app module not found: {e}")
 
 try:
-    import codetools
+    import codetools  # type: ignore[import-not-found]
 
     print(f"codetools module found at: {codetools.__file__}")
 except ImportError as e:
@@ -76,6 +74,8 @@ print(f"Loading code_context_tools from: {code_context_tools_path}")
 
 # Load the code_context_tools module directly
 spec = importlib.util.spec_from_file_location("code_context_tools", code_context_tools_path)
+if spec is None or spec.loader is None:
+    raise ImportError(f"Cannot load module from {code_context_tools_path}")
 code_context_tools = importlib.util.module_from_spec(spec)
 sys.modules["code_context_tools"] = code_context_tools
 spec.loader.exec_module(code_context_tools)
